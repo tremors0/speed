@@ -1,11 +1,16 @@
 <template>
   <div id="navbar" class="flex flex-col items-center uppercase bg-black">
-    <div class="fixed z-50 flex items-center justify-between w-full h-16 bg-black lg:relative navbar-block">
+    <div
+      class="fixed z-50 flex items-center justify-between w-full h-16 bg-black lg:relative navbar-block"
+    >
       <ul class="flex items-center mt-4 md:mt-2 navbar-nav justify-items-start">
         <nav-bar-item :logo="true">
           <router-link class="flex items-center" @click="active = false" to="/">
-            <img class="navbar-item__img navbar-item__filter" src="../assets/logo.png" />
-            <h3>raut na míru</h3>
+            <img
+              class="navbar-item__img navbar-item__filter"
+              src="../assets/logo.png"
+            />
+            <h3>&nbsp;&nbsp;speed date</h3>
           </router-link>
         </nav-bar-item>
       </ul>
@@ -13,14 +18,27 @@
         <nav-bar-list @close="active = false"></nav-bar-list>
       </ul>
 
-      <button @click="active = !active" :class="active ? 'is-active' : null" class="md:hidden hamburger hamburger--emphatic" type="button">
+      <button
+        @click="active = !active"
+        :class="active ? 'is-active' : null"
+        class="md:hidden hamburger hamburger--emphatic"
+        type="button"
+      >
         <span class="hamburger-box">
           <span class="hamburger-inner"></span>
         </span>
       </button>
     </div>
-    <div class="w-screen navbar-menu" :class="active ? 'navbar-menu__active' : 'navbar-menu__inactive'">
-      <ul :class="active ? 'navbar-menu-list__active' : 'navbar-menu-list__inactive'" class="flex-col items-center pt-4 justify-items-end md:hidden">
+    <div
+      class="w-screen navbar-menu"
+      :class="active ? 'navbar-menu__active' : 'navbar-menu__inactive'"
+    >
+      <ul
+        :class="
+          active ? 'navbar-menu-list__active' : 'navbar-menu-list__inactive'
+        "
+        class="flex-col items-center pt-4 justify-items-end md:hidden"
+      >
         <nav-bar-list @close="active = false"></nav-bar-list>
       </ul>
     </div>
@@ -28,21 +46,21 @@
 </template>
 
 <script>
-import NavBarItem from "./NavBarItem.vue"
-import NavBarList from "./NavBarList.vue"
+import NavBarItem from "./NavBarItem.vue";
+import NavBarList from "./NavBarList.vue";
 
 export default {
   data() {
     return {
       active: false,
-    }
+    };
   },
 
   components: {
     NavBarItem,
     NavBarList,
   },
-}
+};
 </script>
 
 <style>
@@ -91,7 +109,7 @@ export default {
 
 .navbar-menu__active {
   background: black;
-  color: white;
+  color: pink;
   margin-top: 50px;
   opacity: 1;
   /*   transition: max-height 0.5s ease, opacity 1s; */
@@ -130,7 +148,8 @@ export default {
 }
 
 .navbar-item__filter {
-  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(180deg) brightness(105%) contrast(102%);
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(180deg)
+    brightness(105%) contrast(102%);
   opacity: 1;
   transition: 1s;
 }

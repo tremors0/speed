@@ -1,17 +1,17 @@
 <script setup>
-import Navbar from "./components/NavBar.vue"
-import axios from "axios"
-import { ref } from "vue"
-import { useToast } from "vue-toastification"
+import Navbar from "./components/NavBar.vue";
+import axios from "axios";
+import { ref } from "vue";
+import { useToast } from "vue-toastification";
 
 // Get toast interface
-const toast = useToast()
+const toast = useToast();
 
-const message = ref("")
-const firstname = ref("")
-const surname = ref("")
-const phone = ref("")
-const email = ref("")
+const message = ref("");
+const firstname = ref("");
+const surname = ref("");
+const phone = ref("");
+const email = ref("");
 
 const send = async () => {
   try {
@@ -21,24 +21,30 @@ const send = async () => {
       surname: surname.value,
       email: email.value,
       phone: phone.value,
-    }
-    const resp = await axios.post(`https://www.polevkoveokynko.cz/api/rautnamiru/`, data)
+    };
+    const resp = await axios.post(
+      `https://www.polevkoveokynko.cz/api/rautnamiru/`,
+      data
+    );
 
     toast.success("Poptávka byla odeslána", {
       timeout: 2000,
-    })
+    });
   } catch (err) {
-    console.log(err)
-    toast.error("Něco se pokazilo. Zkuste to prosím později, případně nás kontakujte.", {
-      timeout: 2000,
-    })
+    console.log(err);
+    toast.error(
+      "Něco se pokazilo. Zkuste to prosím později, případně nás kontakujte.",
+      {
+        timeout: 2000,
+      }
+    );
   }
-}
+};
 </script>
 
 <template>
   <div class="min-h-screen layout">
-    <Navbar id="item-0" />
+    <Navbar id="navbar-wrapper" />
     <div id="intro">
       <img
         src="./assets/three.jpg"
@@ -46,44 +52,77 @@ const send = async () => {
         class="w-screen bg-gray-100 rounded-lg md:hidden"
       />
       <div class="bg-white">
-        <div class="grid items-center max-w-2xl grid-cols-1 px-4 py-24 mx-auto gap-y-16 gap-x-8 sm:px-6 sm:py-32 lg:max-w-7xl lg:px-8 lg:grid-cols-2">
+        <div
+          class="grid items-center max-w-2xl grid-cols-1 px-4 py-24 mx-auto gap-y-16 gap-x-8 sm:px-6 sm:py-32 lg:max-w-7xl lg:px-8 lg:grid-cols-2"
+        >
           <div>
-            <h2 class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">RAUT NA MÍRU</h2>
-            <p class="mt-4 text-gray-500">Ke každému přistupujeme individuálně.</p>
+            <h2
+              class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl"
+            >
+              Speed date
+            </h2>
+            <p class="mt-4 text-pink-400">
+              Přijďte si během pár minut najít životního partnera.
+            </p>
 
-            <dl class="grid grid-cols-1 mt-16 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:gap-x-8">
+            <dl
+              class="grid grid-cols-1 mt-16 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:gap-x-8"
+            >
               <div class="pt-4 border-t border-gray-200">
-                <dt class="font-medium text-gray-900">Soukromé</dt>
+                <dt class="font-medium text-gray-900">Proč speed date?</dt>
                 <dd class="mt-2 text-sm text-gray-500">
-                  Máte narozeniny a nechce se Vám připravovat pohoštění? Řešíte catering na svatbu a pořád se s nikým nemůžete domluvit? Vždy se snažíme vyhovět
-                  individuálním potřebám, proto neváhejte a napište nám. :)
+                  Speed date je skvělá volba pro všechny, kteří již nemají tolik
+                  času a příležitostí hledat si partnera v novém kolektivu. S
+                  námi poznáte během relativně krátké doby dost protějšků, kteří
+                  jsou na tom stejně jako vy a taky hledají lásku :) Po dobu
+                  akce se můžete těšit na neomezenou konzumaci vína drobné
+                  občerstvení.
                 </dd>
               </div>
 
               <div class="pt-4 border-t border-gray-200">
-                <dt class="font-medium text-gray-900">Firemní</dt>
+                <dt class="font-medium text-gray-900">Kdy a kde?</dt>
                 <dd class="mt-2 text-sm text-gray-500">
-                  Zajišťujeme občerstvení na jednorázové firemní akce, meetingy, teambuildingy aj. Je možné se také domluvit na pravidelných rozvozech svačin
-                  nebo obědů.
+                  Rychlo rande pořádáme obvykle jednou za měsíc. V případě, že
+                  je opravdu velký zájem, tak přidáváme náhradní termíny.
+                  Případně jsou dva speed daty hned po sobě. Akce probíhá vždy v
+                  odděleném horním patře baru Oblast na Kolišti 3 (dole pod
+                  zastávkou Moravské náměstí mezi čajovnou Leyaly a Samovarem).
                 </dd>
               </div>
 
               <div class="pt-4 border-t border-gray-200">
-                <dt class="font-medium text-gray-900">Pronájem vybavení</dt>
+                <dt class="font-medium text-gray-900">Jak to probíhá?</dt>
                 <dd class="mt-2 text-sm text-gray-500">
-                  Nemáte dostatek vybavení na akci? Zapůjčíme Vám gastro zařízení jako je ledovač, kávovar, pípa, dále pak nádoby, talíře, příbory.
+                  Bude pro Vás připravených 10-15 stolů u kterých budou dvě
+                  židle. Jedna pro ženu a druhá pro muže. Ženy budou sedět stále
+                  u stejného stolu a muži budou vždy po 3-5 minutách postupovat
+                  od jednoho stolu k druhému. Před zahájením dostane každý
+                  účastník papír, do kterého si bude psát poznámky k jednotlivým
+                  protějškům a záznamový arch do kterého potom napíše ANO nebo
+                  NE. Podle jednotlivých matchů potom rozešleme výsledky.
                 </dd>
               </div>
 
               <div class="pt-4 border-t border-gray-200">
-                <dt class="font-medium text-gray-900">Pronájem prostor</dt>
+                <dt class="font-medium text-gray-900">
+                  Jak probíhá vyhodnocení a kolik to stojí?
+                </dt>
                 <dd class="mt-2 text-sm text-gray-500">
-                  V našich prostorech je možnost zorganizovat akci nejrůznějšího typu (narozeniny, koncerty, vernisáže, přednášky apod.)
+                  Po skončení speed datu odevzdáte moderátorovi záznamové archy,
+                  ve kterých budete mít u každého protějšku napsáno ANO nebo NE.
+                  My tyto výsledky porovnáme s výsledky druhého pohlaví a v
+                  případě, že dojde ke shodě, tak Vám během následujícího dne
+                  pošleme emailem kontakty :) Cena za speed date je 500Kč.
+                  Nicméně nyní máme zvýhodněnou cenu ve spolupráci s portálem
+                  Slevomat! Viz. níže ..
                 </dd>
               </div>
             </dl>
           </div>
-          <div class="grid grid-cols-1 grid-rows-2 gap-4 md:grid-cols-2 sm:gap-6 lg:gap-8">
+          <div
+            class="grid grid-cols-1 grid-rows-2 gap-4 md:grid-cols-2 sm:gap-6 lg:gap-8"
+          >
             <img
               src="./assets/two.jpg"
               alt="Walnut card tray with white powder coated steel divider and 3 punchout holes."
@@ -94,7 +133,11 @@ const send = async () => {
               alt="Top down view of walnut card tray with embedded magnets and card groove."
               class="hidden bg-gray-100 rounded-lg md:block my-img h-100"
             />
-            <img src="./assets/one.jpg" alt="Side of walnut card tray with card groove and recessed card area." class="bg-gray-100 rounded-lg my-img" />
+            <img
+              src="./assets/one.jpg"
+              alt="Side of walnut card tray with card groove and recessed card area."
+              class="bg-gray-100 rounded-lg my-img"
+            />
             <img
               src="./assets/four.jpg"
               alt="Walnut card tray filledwith cards and card angled in dedicated groove."
@@ -103,9 +146,16 @@ const send = async () => {
           </div>
         </div>
       </div>
-      <div id="contact" class="w-full py-8 bg-gradient-to-r from-pink-500 to-violet-500">
+      <div
+        id="contact"
+        class="w-full py-8 bg-gradient-to-r from-pink-200 to-pink-400"
+      >
         <form class="w-full max-w-lg px-3 mx-auto">
-          <h2 class="pt-10 mb-4 text-2xl font-extrabold tracking-tight text-left text-gray-900 sm:text-2xl">Online rezervace</h2>
+          <h2
+            class="pt-10 mb-4 text-2xl font-extrabold tracking-tight text-left text-gray-900 sm:text-2xl"
+          >
+            Online rezervace
+          </h2>
           <!--  <div class="flex flex-wrap mb-4 -mx-3">
             <div class="w-full px-3 mb-4 md:w-1/2 md:mb-0">
               <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="grid-first-name"> Jméno</label>
@@ -172,11 +222,18 @@ const send = async () => {
       </div>
     </div>
 
-    <div class="flex items-center w-screen h-full mx-auto text-sm text-white bg-black ju md:justify-between">
-      <div class="flex flex-col items-center md:items-start md:mx-auto md:flex-row">
+    <footer id="footer"
+      class="flex items-center w-screen h-full mx-auto text-sm text-white bg-black ju md:justify-between"
+    >
+      <div
+        class="flex flex-col items-center md:items-start md:mx-auto md:flex-row"
+      >
         <div class="w-full my-4 text-center md:text-left md:w-auto md:mr-32">
           <p>Telefon: +420 608 824 463</p>
-          <p>E-mail: <a href="mailto:rautnamiru@email.cz">rautnamiru@email.cz </a></p>
+          <p>
+            E-mail:
+            <a href="mailto:rautnamiru@email.cz">rautnamiru@email.cz </a>
+          </p>
           <p class="mb-4">Adresa: Koliště 1907/3, 602 00 Brno-střed </p>
           <!--  </div> -->
 
@@ -185,7 +242,9 @@ const send = async () => {
           <p>IC 09305271</p>
           <p>Koliště 1907/3</p>
         </div>
-        <div class="flex flex-col items-center justify-center w-screen md:w-auto md:items-start md:justify-start">
+        <div
+          class="flex flex-col items-center justify-center md:w-auto md:items-start md:justify-start"
+        >
           <a href="https://www.oblast.cz">
             <img
               src="./assets/oblast.jpg"
@@ -202,7 +261,7 @@ const send = async () => {
           </a>
         </div>
       </div>
-    </div>
+    </footer>
   </div>
 </template>
 
@@ -218,11 +277,16 @@ const send = async () => {
 
 .gradient {
   background: rgb(47, 47, 47);
-  background: linear-gradient(90deg, rgb(37, 58, 40), rgba(65, 150, 70, 1) 100%);
+  background: linear-gradient(
+    90deg,
+    rgb(37, 58, 40),
+    rgba(65, 150, 70, 1) 100%
+  );
 }
 
 .item__filter {
-  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(180deg) brightness(105%) contrast(102%);
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(180deg)
+    brightness(105%) contrast(102%);
   opacity: 1;
   transition: 1s;
 }
@@ -236,7 +300,7 @@ html {
 }
 
 .my-img {
-  height: 420px;
+  height: 320px;
   width: 360px;
 }
 </style>

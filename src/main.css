@@ -16,13 +16,14 @@ a:hover {
   cursor: pointer;
 }
 
-#item-0 {
+#navbar-wrapper {
   grid-row-start: 1;
   grid-column-start: 1;
 
   grid-row-end: 2;
   grid-column-end: 6;
 }
+
 #intro {
   grid-row-start: 2;
   grid-column-start: 1;
@@ -30,12 +31,14 @@ a:hover {
   grid-row-end: 3;
   grid-column-end: 6;
 }
-#item-2 {
+
+#footer {
   grid-row-start: 3;
   grid-column-start: 1;
 
   grid-row-end: 4;
   grid-column-end: 6;
+  width: 100%;
 }
 
 .hamburger {
