@@ -82,31 +82,6 @@ export default {
   min-height: inherit;
 }
 
-/* .navbar-menu__active {
-  opacity: 1;
-  max-height: 500px;
-  transition: max-height 2s, opacity 0.3s;
-}
-
-.navbar-menu__inactive {
-  transition: max-height 1s, opacity 1s;
-  max-height: 0px;
-  opacity: 0;
-}
-
-.navbar-menu-list__active {
-  transition: visibility 1.2s, opacity 1.2s;
-  visibility: visible;
-  opacity: 1;
-}
-
-.navbar-menu-list__inactive {
-  transition: visibility 0.3s, opacity 0.3s;
-  visibility: hidden;
-  opacity: 0;
-  list-style: none;
-} */
-
 .navbar-menu__active {
   background: black;
   color: pink;

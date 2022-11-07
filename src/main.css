@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-.layout {
+/* .layout {
   display: grid;
 
   grid-template-rows: 70px 1fr auto;
@@ -10,13 +10,13 @@
 
   gap: 0px;
   height: 100%;
-}
+} */
 
 a:hover {
   cursor: pointer;
 }
 
-#navbar-wrapper {
+/* #navbar-wrapper {
   grid-row-start: 1;
   grid-column-start: 1;
 
@@ -39,7 +39,7 @@ a:hover {
   grid-row-end: 4;
   grid-column-end: 6;
   width: 100%;
-}
+} */
 
 .hamburger {
   padding: 0 15px;
