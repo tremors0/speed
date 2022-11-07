@@ -3,15 +3,16 @@ import Navbar from "./components/NavBar.vue";
 import axios from "axios";
 import { ref } from "vue";
 import { useToast } from "vue-toastification";
+import { VueperSlides, VueperSlide } from 'vueperslides'
+import 'vueperslides/dist/vueperslides.css'
 
 // Get toast interface
 const toast = useToast();
 
-const message = ref("");
-const firstname = ref("");
-const surname = ref("");
-const phone = ref("");
-const email = ref("");
+const slides = [
+  { image: 'src/assets/two.jpg' },
+  { image: 'src/assets/four.jpg' },
+]
 
 const send = async () => {
   try {
@@ -80,8 +81,13 @@ const send = async () => {
                   odděleném horním patře baru Oblast na Kolišti 3 (dole pod
                   zastávkou Moravské náměstí mezi čajovnou Leyaly a Samovarem).
                 </dd>
-                <img src="./assets/two.jpg" alt="Room on the seconf floor in Oblast with tables and plants."
-                  class="bg-gray-100 rounded-lg mt-2 mx-auto max-w-[90%]" />
+                <dd class="mt-2 mx-auto max-w-[90%]">
+                  <vueper-slides lazy lazy-load-on-drag>
+                    <vueper-slide v-for="(slide, i) in slides" :key="i" :image="slide.image" />
+                  </vueper-slides>
+                  <!-- <img src="./assets/two.jpg" alt="Room on the seconf floor in Oblast with tables and plants."
+                    class="bg-gray-100 rounded-lg mt-2 mx-auto max-w-[90%]" /> -->
+                </dd>
               </div>
 
               <div class="pt-4 border-t border-gray-200">
@@ -198,5 +204,27 @@ label {
 
 html {
   scroll-behavior: smooth;
+}
+
+.vueperslides__parallax-wrapper {
+  min-height: 200px;
+}
+
+@media screen(sm) {
+  .vueperslides__parallax-wrapper {
+    min-height: 300px;
+  }
+}
+
+@media screen(md) {
+  .vueperslides__parallax-wrapper {
+    min-height: 400px;
+  }
+}
+
+@media screen(lg) {
+  .vueperslides__parallax-wrapper {
+    min-height: 600px;
+  }
 }
 </style>

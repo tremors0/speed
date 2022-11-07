@@ -2,44 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-/* .layout {
-  display: grid;
-
-  grid-template-rows: 70px 1fr auto;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-
-  gap: 0px;
-  height: 100%;
-} */
-
 a:hover {
   cursor: pointer;
 }
-
-/* #navbar-wrapper {
-  grid-row-start: 1;
-  grid-column-start: 1;
-
-  grid-row-end: 2;
-  grid-column-end: 6;
-}
-
-#intro {
-  grid-row-start: 2;
-  grid-column-start: 1;
-
-  grid-row-end: 3;
-  grid-column-end: 6;
-}
-
-#footer {
-  grid-row-start: 3;
-  grid-column-start: 1;
-
-  grid-row-end: 4;
-  grid-column-end: 6;
-  width: 100%;
-} */
 
 .hamburger {
   padding: 0 15px;
@@ -88,7 +53,6 @@ a:hover {
 .hamburger-inner::after {
   width: 30px;
   height: 4px;
-  //background-color: #2c3e50;
   background-color: white;
   opacity: 0.8;
   border-radius: 4px;
@@ -143,7 +107,6 @@ a:hover {
 }
 .hamburger-inner::before,
 .hamburger-inner::after {
-  //background-color: #2c3e50 !important;
   background-color: white;
   opacity: 0.8;
 }

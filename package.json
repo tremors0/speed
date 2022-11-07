@@ -10,7 +10,8 @@
   "dependencies": {
     "axios": "^0.24.0",
     "vue": "^3.2.25",
-    "vue-toastification": "^2.0.0-rc.5"
+    "vue-toastification": "^2.0.0-rc.5",
+    "vueperslides": "^3.5.1"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.3.3",
